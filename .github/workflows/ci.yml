@@ -3,7 +3,7 @@ name: Spring Boot CI/CD
 on:
   push:
     branches: [ "master" ]
-
+    
 jobs:
   ci:
     name: Build & Test (CI)
@@ -46,7 +46,6 @@ jobs:
             ajaykhandare69docker/springboot-ci-cd-demo:latest
             ajaykhandare69docker/springboot-ci-cd-demo:${{ github.sha }}
 
-      # ✅ Setup kubectl config
       - name: Setup kubeconfig
         run: |
           mkdir -p ~/.kube
