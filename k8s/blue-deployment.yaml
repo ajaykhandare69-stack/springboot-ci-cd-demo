@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-blue
+  name: springboot-stable
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: springboot
-      version: blue
+      track: stable
   template:
     metadata:
       labels:
         app: springboot
-        version: blue
+        track: stable
     spec:
       containers:
         - name: springboot
