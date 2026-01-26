@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot
+      version: green
+  template:
+    metadata:
+      labels:
+        app: springboot
+        version: green
+    spec:
+      containers:
+        - name: springboot
+          image: springboot-app:green
+          ports:
+            - containerPort: 8080
