@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-green
+  name: springboot-canary
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: springboot
-      version: green
+      track: canary
   template:
     metadata:
       labels:
         app: springboot
-        version: green
+        track: canary
     spec:
       containers:
         - name: springboot
