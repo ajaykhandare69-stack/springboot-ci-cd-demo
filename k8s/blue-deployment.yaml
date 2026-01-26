@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-demo
+  name: springboot-blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springboot-demo
+      app: springboot
+      version: blue
   template:
     metadata:
       labels:
-        app: springboot-demo
+        app: springboot
+        version: blue
     spec:
       containers:
-        - name: springboot-demo
+        - name: springboot
           image: ajaykhandare69docker/springboot-ci-cd-demo:latest
           ports:
             - containerPort: 8080
